@@ -32,6 +32,13 @@ class LifeCycleDemo extends Component {
     return true;
   }
 
+  componentDidUpdate(prevProp,prevState){
+    //Called immediately after updateing JSX 
+    //Whether re rendering is over(executed) or not
+    //place to add tiny dom updations
+    document.getElementById("myPara").style.color = 'Green'
+  }
+
   render() {
     if (this.state.isLoading) {
       return (
@@ -44,7 +51,7 @@ class LifeCycleDemo extends Component {
     return (
       <div>
         <div>LifeCycleDemo</div>
-        <p>Features : {this.state.featureName}</p>
+        <p id="myPara">Features : {this.state.featureName}</p>
       </div>
     );
   }
