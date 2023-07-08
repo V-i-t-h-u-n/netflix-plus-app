@@ -4,6 +4,7 @@ import RecommendedVideos from "../RecommendedVideos/RecommendedVideos";
 import Subscription from "../Subscription/Subscription";
 import TrendingVideoList from "../TrendingVideoList/TrendingVideoList";
 import LatestVideo from "./LatestVideo/LatestVideo";
+import LifeCycleDemo from "./LifeCycleDemo/LifeCycleDemo";
 import MyProfile from "./MyProfile/MyProfile";
 
 
@@ -70,6 +71,11 @@ const Homepage = () => {
             <div className="mt-4">
                 <h2>Profile Status</h2>
                 <MyProfile />
+            </div>
+
+            <div className="mt-4">
+                <h2>LifeCycle Demo</h2>
+                <LifeCycleDemo />
             </div>
 
         </div>
