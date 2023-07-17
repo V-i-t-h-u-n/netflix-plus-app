@@ -8,6 +8,8 @@ import Homepage from "./pages/HomePage/Homepage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import ContactUsPage from "./pages/ContactUsPage/ContactUsPage";
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 function App() {
   return (

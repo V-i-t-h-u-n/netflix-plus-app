@@ -1,5 +1,6 @@
 //rafce
 
+import { Helmet } from "react-helmet";
 import RecommendedVideos from "../RecommendedVideos/RecommendedVideos";
 import Subscription from "../Subscription/Subscription";
 import TrendingVideoList from "../TrendingVideoList/TrendingVideoList";
@@ -11,6 +12,10 @@ import MyProfile from "./MyProfile/MyProfile";
 const Homepage = () => {
     return (
         <div>
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
+
             <h1>Home Page</h1>
             <div className="row mt-5 ">
                 <h1>Latest Video</h1>
