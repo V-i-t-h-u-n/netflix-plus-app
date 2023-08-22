@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom";
-//React helmet package for title change
-//change Link to ? for active menu
+import { NavLink } from 'react-router-dom';
+// React helmet package for title change
+// change Link to ? for active menu
 const MenuList = () => {
   return (
     <div>
@@ -8,6 +8,11 @@ const MenuList = () => {
         <li className="nav-item">
           <NavLink className="nav-link " aria-current="page" to="/">
             Home
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link " to="/hoc-demo">
+            Hoc Demo
           </NavLink>
         </li>
         <li className="nav-item">

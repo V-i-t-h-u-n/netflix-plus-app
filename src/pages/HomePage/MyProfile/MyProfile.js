@@ -2,15 +2,16 @@ import React, { Component } from 'react'
 
 export class MyProfile extends Component {
   state = {
-    profileName : 'Vithun'
+    profileName: 'Vithun'
   }
 
-  handleProfileNameChange = (event) =>{
+  handleProfileNameChange = (event) => {
     this.setState({
       profileName: event.target.value
     })
   }
-  render() {
+
+  render () {
     return (
       <div>
         <p>

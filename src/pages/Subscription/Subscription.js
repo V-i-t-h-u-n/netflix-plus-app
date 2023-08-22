@@ -2,10 +2,10 @@ import React from 'react'
 import './Subscription.css'
 const Subscription = () => {
   const renewStyle = {
-    color : 'black',
-    backgroundColor : 'ButtonHighlight',
-    border : 'solid 3px grey'
-}
+    color: 'black',
+    backgroundColor: 'ButtonHighlight',
+    border: 'solid 3px grey'
+  }
 
   return (
     <div className='Subscription text-center'>
