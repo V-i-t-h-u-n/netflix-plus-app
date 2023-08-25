@@ -11,26 +11,35 @@ import ContactUsPage from './pages/ContactUsPage/ContactUsPage';
 import 'bootstrap/dist/css/bootstrap.css';
 import ErrorBoundary from './containers/Shared/ErrorBoundary/ErrorBoundary';
 import HocDemoPage from './pages/HocDemoPage/HocDemoPage';
+import HooksDemoPage from './pages/HooksDemoPage/HooksDemoPage';
 
-function App () {
+function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Header />
+      <ErrorBoundary>
+        <div className="App">
+          <Header />
 
-        <main className=" mt-5 p-5">
-          <ErrorBoundary>
+          <main className=" mt-5 p-5">
             <Routes>
               <Route path="/" element={<Homepage />}></Route>
               <Route path="/hoc-demo" element={<HocDemoPage />}></Route>
-              <Route path="about-us" element={<AboutPage />}></Route>
+              <Route
+                path="about-us"
+                element={
+                  <ErrorBoundary>
+                    <AboutPage />
+                  </ErrorBoundary>
+                }
+              ></Route>
               <Route path="contact-us" element={<ContactUsPage />}></Route>
+              <Route path="hooks-demo" element={<HooksDemoPage />}></Route>
             </Routes>
-          </ErrorBoundary>
-        </main>
+          </main>
 
-        <Footer />
-      </div>
+          <Footer />
+        </div>
+      </ErrorBoundary>
     </BrowserRouter>
   );
 }

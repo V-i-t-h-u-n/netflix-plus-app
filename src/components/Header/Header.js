@@ -1,16 +1,16 @@
+import { Link } from 'react-router-dom';
 import MenuList from '../MenuList/MenuList';
 
 // import logo from './logo.svg';
 function Header () {
   return (
-
     <div>
       <header>
         <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
           <div className="container-fluid ">
-            <a className="navbar-brand" href="/">
+            <Link className="navbar-brand" href="/">
                             Netflix-App
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
