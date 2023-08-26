@@ -21,9 +21,7 @@ const MenuList = () => {
   });
   return (
     <div>
-      <ul className="navbar-nav me-auto mb-2 mb-md-0">
-        {componentDataArray}
-      </ul>
+      <ul className="navbar-nav me-auto mb-2 mb-md-0">{componentDataArray}</ul>
       {/* <li className="nav-item">
           <NavLink className="nav-link " aria-current="page" to="/">
             Home
