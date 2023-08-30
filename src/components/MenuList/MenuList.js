@@ -8,7 +8,8 @@ const MenuList = () => {
     { link: '/hoc-demo', title: 'Hoc Demo' },
     { link: '/about-us', title: 'About Us' },
     { link: '/contact-us', title: 'Contact Us' },
-    { link: '/hooks-demo', title: 'Hooks' }
+    { link: '/hooks-demo', title: 'Hooks' },
+    { link: '/shop-page', title: 'Shop Page' }
   ];
   const componentDataArray = attributeArrayObject.map((attribute) => {
     return (

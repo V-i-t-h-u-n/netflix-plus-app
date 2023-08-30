@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { PageContext } from '../../../contexts/PageContext/PageContext';
 
 const MyAccount = () => {
   const [myAccountName, setMyAccountName] = useState('Vithun');
   const [age, setAge] = useState(20);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
-
+  const userData = useContext(PageContext);
   const handleCHangeMyAccountName = () => {
     setMyAccountName('VC Vithun');
   };
@@ -36,6 +37,9 @@ const MyAccount = () => {
       >
         {isLoggedIn ? 'Logout' : 'Login'}
       </button>
+      <h3>PageContext</h3>
+      <p>{userData.isLoggedIn ? 'LoggedIn' : 'LoggedOut'}</p>
+      <p>Last Seen: {userData.lastSeen}</p>
     </div>
   );
 };

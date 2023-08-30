@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import TrendingVideo from './TrendingVideo';
 
 class TrendingVideoList extends Component {
   state = {
@@ -29,34 +30,44 @@ class TrendingVideoList extends Component {
     this.setState({
       videoResolution: '1080p'
     });
-  }
+  };
 
-  render () {
+  render() {
     return (
-      <div className='row'>
-
-        <p>videoResolution : {this.state.videoResolution} {' '}
-          <button type='button' className='btn btn-secondary btn-sm' onClick={this.handleVideoResolution}>
-                    Change Resolution
+      <div className="row">
+        <p>
+          videoResolution : {this.state.videoResolution}{' '}
+          <button
+            type="button"
+            className="btn btn-secondary btn-sm"
+            onClick={this.handleVideoResolution}
+          >
+            Change Resolution
           </button>
         </p>
-
-        <div className='col-md-3'>
-          <div className="card">
-            <img src={this.state.videos[0].thumbnailUrl} className="card-img-top" alt={this.state.videos[0].title} />
-            <div className="card-body">
-              <h5 className="card-title"># {this.state.videos[0].trendingRank} {this.state.videos[0].title}</h5>
-              <p>{this.state.videos[0].desc}</p>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">{this.state.videos[0].views} Views</li>
-                <li className="list-group-item">{this.state.videos[0].publishedOn}</li>
-              </ul>
+        <div className="row">
+          <div className="col-md-3">
+            <div className="card">
+              {this.state.videos?.map((video) => {
+                return (
+                  <TrendingVideo
+                    key={video.id}
+                    trendingRank={video.trendingRank}
+                    title={video.title}
+                    thumbnailUrl={video.thumbnailUrl}
+                    desc={video.desc}
+                    views={video.views}
+                    publishedOn={video.publishedOn}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
+
 export default TrendingVideoList;
 // class component
