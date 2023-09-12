@@ -1,11 +1,10 @@
-import { useReducer } from 'react';
+import { useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import cartReducer from '../../reducer/CartReducer/cartReducer.js';
+import { CartContext } from '../../contexts/CartContext/CartContext.js';
 
 const ShopPage = () => {
-  const [cartList, cartDispatcher] = useReducer(cartReducer);
-  console.log(cartList);
-
+  const cart = useContext(CartContext);
+  // console.log(cart);
   const products = [
     {
       id: 1,
@@ -27,7 +26,7 @@ const ShopPage = () => {
 
   const handleAddToCart = (product) => {
     // console.log(product);
-    cartDispatcher({
+    cart.cartDispatch({
       type: 'ADD_TO_CART',
       payload: product
     });

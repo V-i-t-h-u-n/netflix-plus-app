@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import MenuList from '../MenuList/MenuList';
-// import { useContext } from 'react';
-// import { CartContext } from '../../contexts/CartContext/CartContext';
+import { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext/CartContext';
 
-// import logo from './logo.svg';
 function Header() {
-  // const cartContext = useContext(CartContext);
+  const cart = useContext(CartContext);
+  console.log(cart.cartState);
   return (
     <div>
       <header>
@@ -29,7 +29,11 @@ function Header() {
               <MenuList />
               <ul className="navbar-nav me-auto mb-2 mb-md-0"></ul>
               <button className="btn btn-danger" type="button">
-                Cart (0)
+                Cart (
+                {cart.cartState?.length === undefined
+                  ? '0'
+                  : cart.cartState?.length}
+                )
               </button>
             </div>
           </div>

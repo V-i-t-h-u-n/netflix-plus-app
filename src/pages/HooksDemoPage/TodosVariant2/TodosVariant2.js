@@ -1,5 +1,6 @@
 import { useEffect, useReducer, useRef } from 'react';
 import todoReducer from '../../../reducer/todoReducer/todoReducer';
+import axios from 'axios';
 
 const TodosVariant2 = () => {
   const todoInput = useRef('');
@@ -8,9 +9,18 @@ const TodosVariant2 = () => {
   console.log(todoDispatch); // dispatcher fn must be called with an action obj to get state data from the reducer
 
   useEffect(() => {
-    todoDispatch({
-      type: 'LIST_TODO'
-    });
+    axios
+      .get('https://jsonplaceholder.typicode.com/todos?_limit=3')
+      .then((res) => {
+        todoDispatch({
+          type: 'LIST_TODO',
+          payload: res.data
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {});
   }, []);
 
   const handleAddTodos = () => {

@@ -18,7 +18,7 @@ class TrendingVideoList extends Component {
         trendingRank: 2,
         title: 'Planet Earth II',
         thumbnailUrl: 'https://placehold.co/280x200',
-        desc: 'A show by David Attenborough on BBC Earth Channel',
+        desc: 'A show by David Attenborough on BBC Earth',
         views: '900K',
         publishedOn: '2 weeks ago'
       }
@@ -45,25 +45,20 @@ class TrendingVideoList extends Component {
             Change Resolution
           </button>
         </p>
-        <div className="row">
-          <div className="col-md-3">
-            <div className="card">
-              {this.state.videos?.map((video) => {
-                return (
-                  <TrendingVideo
-                    key={video.id}
-                    trendingRank={video.trendingRank}
-                    title={video.title}
-                    thumbnailUrl={video.thumbnailUrl}
-                    desc={video.desc}
-                    views={video.views}
-                    publishedOn={video.publishedOn}
-                  />
-                );
-              })}
-            </div>
-          </div>
-        </div>
+
+        {this.state.videos?.map((video) => {
+          return (
+            <TrendingVideo
+              key={video.id}
+              trendingRank={video.trendingRank}
+              title={video.title}
+              thumbnailUrl={video.thumbnailUrl}
+              desc={video.desc}
+              views={video.views}
+              publishedOn={video.publishedOn}
+            />
+          );
+        })}
       </div>
     );
   }

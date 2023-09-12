@@ -3,7 +3,7 @@ const todoReducer = (state = [], action) => {
   case 'ADD_TODO':
     return [...state, action.payload];
   case 'LIST_TODO':
-    return state
+    return action.payload;
   default:
     return state
   }
